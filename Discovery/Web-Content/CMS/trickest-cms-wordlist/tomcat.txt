@@ -292,6 +292,7 @@ test/org/apache/catalina/filters/TestRemoteIpFilter.java
 test/org/apache/catalina/filters/TestRateLimitFilterWithExactRateLimiter.java
 test/org/apache/catalina/filters/TestRestCsrfPreventionFilter2.java
 test/org/apache/catalina/filters/TestCorsFilter.java
+test/org/apache/catalina/filters/TesterRateLimitClientBase.java
 test/org/apache/catalina/filters/TestRateLimitFilter.java
 test/org/apache/catalina/filters/TesterHttpServletRequest.java
 test/org/apache/catalina/filters/TestAddCharSetFilter.java
@@ -562,6 +563,7 @@ test/org/apache/tomcat/security/TestSecurity2018.java
 test/org/apache/tomcat/security/TestSecurity2017Ocsp.java
 test/org/apache/tomcat/security/TestSecurity2023.java
 test/org/apache/tomcat/security/TestSecurity2025Http2.java
+test/org/apache/tomcat/security/TestSecurity2019.java
 test/org/apache/tomcat/jni/TesterSSL.java
 test/org/apache/tomcat/integration/httpd/TestFullReverseProxy.java
 test/org/apache/tomcat/integration/httpd/TestSSLValveWithProxy01.java
@@ -783,6 +785,7 @@ test/org/apache/tomcat/buildutil/translate/TestFixedStrings.java
 test/org/apache/tomcat/unittest/TesterHost.java
 test/org/apache/tomcat/unittest/TesterCounter.java
 test/org/apache/tomcat/unittest/TesterLeakingServlet2.java
+test/org/apache/tomcat/unittest/TesterResponseWithStatus.java
 test/org/apache/tomcat/unittest/TesterRequest.java
 test/org/apache/tomcat/unittest/TesterSessionCookieConfig.java
 test/org/apache/tomcat/unittest/TesterLeakingServlet1.java

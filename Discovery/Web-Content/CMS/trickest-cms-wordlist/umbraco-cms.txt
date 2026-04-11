@@ -1202,6 +1202,7 @@ src/Umbraco.Core/Collections/TypeList.cs
 src/Umbraco.Core/Collections/CompositeIntStringKey.cs
 src/Umbraco.Core/Collections/DeepCloneableList.cs
 src/Umbraco.Core/Collections/OrderedHashSet.cs
+src/Umbraco.Core/Collections/CompositeStringArrayKey.cs
 src/Umbraco.Core/Collections/EventClearingObservableCollection.cs
 src/Umbraco.Core/Features/DisabledFeatures.cs
 src/Umbraco.Core/Features/EnabledFeatures.cs
@@ -1801,6 +1802,9 @@ src/Umbraco.Core/Models/PublishedContent/PublishedContentType.cs
 src/Umbraco.Core/Models/PublishedContent/IPublishedContentType.cs
 src/Umbraco.Core/Models/PublishedContent/IPublishedModelFactory.cs
 src/Umbraco.Core/Models/PublishedContent/PublishedItemType.cs
+src/Umbraco.Core/Models/PublishedContent/PropertyRenderingContext.cs
+src/Umbraco.Core/Models/PublishedContent/IPropertyRenderingContextAccessor.cs
+src/Umbraco.Core/Models/PublishedContent/HybridPropertyRenderingContextAccessor.cs
 src/Umbraco.Core/Models/PublishedContent/PublishedContentTypeConverter.cs
 src/Umbraco.Core/Models/PublishedContent/PublishedValueFallback.cs
 src/Umbraco.Core/Models/Blocks/BlockListValue.cs
@@ -3736,6 +3740,7 @@ src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/SingleBlockPropertyVa
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/BlockGridPropertyValueConverter.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/ConstructorCacheClearNotificationHandler.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/BlockListPropertyValueCreator.cs
+src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/BlockExposeFallbackHelper.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/DateOnlyValueConverter.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/TimeOnlyValueConverter.cs
 src/Umbraco.Infrastructure/PropertyEditors/EmailAddressPropertyEditor.cs
@@ -8368,6 +8373,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/extension-registry/extension-element
 src/Umbraco.Web.UI.Client/src/packages/core/extension-registry/utils/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/extension-registry/utils/create-extension-api-by-alias.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/extension-registry/utils/create-extension-api-by-alias.function.ts
+src/Umbraco.Web.UI.Client/src/packages/core/extension-registry/conditions/delay.condition.ts
 src/Umbraco.Web.UI.Client/src/packages/core/extension-registry/conditions/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/extension-registry/conditions/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/extension-registry/conditions/switch.condition.ts
@@ -12286,6 +12292,7 @@ src/Umbraco.Web.UI.Client/src/mocks/handlers/template/slug.ts
 src/Umbraco.Web.UI.Client/src/mocks/handlers/template/tree.handlers.ts
 src/Umbraco.Web.UI.Client/src/mocks/handlers/template/item.handlers.ts
 src/Umbraco.Web.UI.Client/src/mocks/handlers/template/detail.handlers.ts
+src/Umbraco.Web.UI.Client/src/mocks/handlers/member-type/structure.handlers.ts
 src/Umbraco.Web.UI.Client/src/mocks/handlers/member-type/index.ts
 src/Umbraco.Web.UI.Client/src/mocks/handlers/member-type/slug.ts
 src/Umbraco.Web.UI.Client/src/mocks/handlers/member-type/tree.handlers.ts
@@ -14788,10 +14795,13 @@ tests/Umbraco.Tests.Integration/ManagementApi/Template/CreateTemplateControllerT
 tests/Umbraco.Tests.Integration/ManagementApi/Template/Query/SettingsTemplateQueryControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Template/Query/ExecuteTemplateQueryControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Template/ByKeyTemplateControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Template/CreateTemplateControllerProductionModeTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Template/Item/AncestorsTemplateItemControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Template/Item/ItemTemplateItemControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Template/Tree/ChildrenTemplateTreeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Template/Tree/RootTemplateTreeControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Template/DeleteTemplateControllerProductionModeTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Template/UpdateTemplateControllerProductionModeTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Template/UpdateTemplateControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Template/DeleteTemplateControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Security/ResetPasswordTokenControllerTests.cs
@@ -15125,6 +15135,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Factories/MachineInfoFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentNavigationServiceBaseTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/LongRunningOperationServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentTypeServiceExtensionsTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentPermissionServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/OEmbedServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/AuditServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentTypeSchemaServiceTests.cs
@@ -15136,6 +15147,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentVersionCleanupService
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/IdKeyMapTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/DocumentUrlServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/TreeEntitySortingServiceTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/IsoCodeValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/SystemInformationServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/PublishStatus/PublishedContentStatusFilteringServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/BasicAuthServiceTests.cs
@@ -15155,6 +15167,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/IO/PhysicalFileSystemTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/DeepCloneableListTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/OrderedHashSetTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/StackQueueTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/CompositeStringArrayKeyTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/TopoGraphTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Deploy/ArtifactBaseTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/TemplateTests.cs
@@ -15423,6 +15436,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HealthChecks/MarkdownToHtml
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HealthChecks/HealthCheckResultsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/RecycleBinMediaProtectionHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/SvgFileUploadMediaSavingNotificationHandlerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/BlockExposeFallbackHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/DateOnlyPropertyIndexValueFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/DateTimePropertyEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/BlockEditorVarianceHandlerTests.cs
@@ -15489,6 +15503,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Services/Flags/HasColle
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Services/Flags/HasScheduleFlagProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Services/Flags/IsProtectedFlagProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Services/UserStartNodePathComparisonTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Middleware/BackOfficeAuthorizationInitializationMiddlewareTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Mapping/Content/DocumentVariantStateHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/ServerEvents/ServerEventUserManagerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/ServerEvents/ServerEventAuthorizerTests.cs
