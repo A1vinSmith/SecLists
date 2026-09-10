@@ -6342,6 +6342,7 @@ tests/integration/Core/Checkout/Gateway/SalesChannel/CheckoutGatewayRouteTest.ph
 tests/integration/Core/Checkout/Validation/CustomerVatIdentificationValidatorTest.php
 tests/integration/Core/Checkout/Validation/CustomerEmailUniqueValidatorTest.php
 tests/integration/Core/Checkout/Document/SalesChannel/DocumentRouteTest.php
+tests/integration/Core/Checkout/Document/Aggregate/DocumentBaseConfig/DocumentBaseConfigValidatorTest.php
 tests/integration/Core/Checkout/Document/Renderer/ZugferdCreditNoteRendererTest.php
 tests/integration/Core/Checkout/Document/Renderer/ZugferdCancellationInvoiceRendererTest.php
 tests/integration/Core/Checkout/Document/Renderer/StornoRendererTest.php
@@ -8342,6 +8343,7 @@ tests/unit/Core/Checkout/Promotion/Cart/PromotionProcessorTest.php
 tests/unit/Core/Checkout/Promotion/Cart/PromotionRedemptionLockerTest.php
 tests/unit/Core/Checkout/Promotion/Cart/CartPromotionsSubscriberTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Error/PromotionDiscountUnknownConditionErrorTest.php
+tests/unit/Core/Checkout/Promotion/Cart/Error/PromotionDiscountZeroValueErrorTest.php
 tests/unit/Core/Checkout/Promotion/Cart/PromotionCalculatorTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/Filter/AdvancedPackageRulesTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/Filter/Sorter/FilterSorterPriceTest.php
@@ -8884,6 +8886,7 @@ tests/unit/Core/Content/Flow/DataAbstractionLayer/Field/FlowTemplateConfigFieldT
 tests/unit/Core/Content/Flow/TransactionFailedExceptionTest.php
 tests/unit/Core/Content/Flow/Api/FlowActionCollectorTest.php
 tests/unit/Core/Content/Flow/Controller/TriggerFlowControllerTest.php
+tests/unit/Core/Content/Flow/FlowServiceConfigTest.php
 tests/unit/Core/Content/Flow/FlowExceptionTest.php
 tests/unit/Core/Content/Flow/Indexing/FlowBuilderTest.php
 tests/unit/Core/Content/Flow/Dispatching/BufferedFlowQueueTest.php
@@ -8973,6 +8976,7 @@ tests/unit/Core/Content/Sitemap/Service/SitemapExporterTest.php
 tests/unit/Core/Content/Sitemap/Service/SitemapListerTest.php
 tests/unit/Core/Content/Sitemap/Service/SitemapSalesChannelLoaderTest.php
 tests/unit/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamIndexerTest.php
+tests/unit/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamFilterChangeSetSubscriberTest.php
 tests/unit/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamWriteResultHelperTest.php
 tests/unit/Core/Content/ProductStream/ScheduledTask/UpdateProductStreamMappingTaskHandlerTest.php
 tests/unit/Core/Content/ProductStream/Service/ProductStreamBuilderTest.php
@@ -15600,6 +15604,7 @@ src/Core/Checkout/Promotion/Cart/Extension/LockExtension.php
 src/Core/Checkout/Promotion/Cart/PromotionCalculator.php
 src/Core/Checkout/Promotion/Cart/PromotionCodeTuple.php
 src/Core/Checkout/Promotion/Cart/Error/PromotionDiscountUnknownConditionError.php
+src/Core/Checkout/Promotion/Cart/Error/PromotionDiscountZeroValueError.php
 src/Core/Checkout/Promotion/Cart/Error/PromotionExcludedError.php
 src/Core/Checkout/Promotion/Cart/Error/PromotionNotEligibleError.php
 src/Core/Checkout/Promotion/Cart/Error/PromotionNotFoundError.php
@@ -16819,6 +16824,7 @@ src/Core/Content/Content.php
 src/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamWriteResultHelper.php
 src/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamIndexer.php
 src/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamIndexingMessage.php
+src/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamFilterChangeSetSubscriber.php
 src/Core/Content/ProductStream/ProductStreamDefinition.php
 src/Core/Content/ProductStream/ProductStreamCollection.php
 src/Core/Content/ProductStream/ProductStreamEntity.php
@@ -25042,6 +25048,7 @@ src/Administration/Resources/app/administration/src/app/component/structure/sw-a
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/sw-admin-menu.scss
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/sw-admin-menu.spec/create-wrapper.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/sw-admin-menu.spec/branch-expansion.spec.js
+src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/sw-admin-menu.spec/shortcuts.spec.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/sw-admin-menu.spec.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/index.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-sales-channel-switch/sw-sales-channel-switch.html.twig
