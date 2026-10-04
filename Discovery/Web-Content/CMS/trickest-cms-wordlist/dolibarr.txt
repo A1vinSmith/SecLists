@@ -1737,7 +1737,7 @@ htdocs/includes/tecnickcom/tcpdf/tcpdf.php
 htdocs/includes/tecnickcom/tcpdf/tcpdf_autoconfig.php
 htdocs/includes/tecnickcom/tcpdf/tcpdf_parser.php
 htdocs/includes/tecnickcom/tcpdf/CHANGELOG.TXT
-htdocs/includes/tecnickcom/tcpdf/tcpdf_import.php
+htdocs/includes/tecnickcom/tcpdf/Makefile
 htdocs/includes/tecnickcom/tcpdf/include/tcpdf_static.php
 htdocs/includes/tecnickcom/tcpdf/include/sRGB.icc
 htdocs/includes/tecnickcom/tcpdf/include/tcpdf_filters.php
@@ -1754,6 +1754,7 @@ htdocs/includes/tecnickcom/tcpdf/scripts/doctum.php
 htdocs/includes/tecnickcom/tcpdf/config/tcpdf_config.php
 htdocs/includes/tecnickcom/tcpdf/VERSION
 htdocs/includes/tecnickcom/tcpdf/tcpdf_barcodes_1d.php
+htdocs/includes/tecnickcom/tcpdf/SECURITY.md
 htdocs/includes/tecnickcom/tcpdf/fonts/freesansbi.ctg.z
 htdocs/includes/tecnickcom/tcpdf/fonts/aefurat.ctg.z
 htdocs/includes/tecnickcom/tcpdf/fonts/dejavuserif.php
@@ -3903,7 +3904,6 @@ htdocs/core/modules/modWorkflow.class.php
 htdocs/core/modules/modOauth.class.php
 htdocs/core/modules/modBanque.class.php
 htdocs/core/modules/modDav.class.php
-htdocs/core/modules/supplier_order/doc/pdf_muscadet.modules.php
 htdocs/core/modules/supplier_order/doc/doc_generic_supplier_order_odt.modules.php
 htdocs/core/modules/supplier_order/doc/pdf_cornas.modules.php
 htdocs/core/modules/supplier_order/modules_commandefournisseur.php
@@ -4007,9 +4007,8 @@ htdocs/core/modules/modIntracommreport.class.php
 htdocs/core/modules/modDataPolicy.class.php
 htdocs/core/modules/dons/html_cerfafr.html
 htdocs/core/modules/dons/modules_don.php
+htdocs/core/modules/dons/pdf_standard_donation.modules.php
 htdocs/core/modules/dons/html_cerfafr.modules.php
-htdocs/core/modules/dons/html_generic.html
-htdocs/core/modules/dons/html_generic.modules.php
 htdocs/core/modules/modExpedition.class.php
 htdocs/core/modules/modComptabilite.class.php
 htdocs/core/modules/modPrinting.class.php
@@ -4079,7 +4078,6 @@ htdocs/core/modules/modDynamicPrices.class.php
 htdocs/core/modules/modAccounting.class.php
 htdocs/core/modules/modCollab.class.php
 htdocs/core/modules/delivery/mod_delivery_jade.php
-htdocs/core/modules/delivery/doc/pdf_typhon.modules.php
 htdocs/core/modules/delivery/doc/pdf_storm.modules.php
 htdocs/core/modules/delivery/mod_delivery_saphir.php
 htdocs/core/modules/delivery/modules_delivery.php
@@ -4119,13 +4117,11 @@ htdocs/core/modules/expedition/mod_expedition_ribera.php
 htdocs/core/modules/expedition/doc/pdf_espadon.modules.php
 htdocs/core/modules/expedition/doc/pdf_merou.modules.php
 htdocs/core/modules/expedition/doc/doc_generic_shipment_odt.modules.php
-htdocs/core/modules/expedition/doc/pdf_rouget.modules.php
 htdocs/core/modules/expedition/modules_expedition.php
 htdocs/core/modules/expedition/mod_expedition_safor.php
 htdocs/core/modules/propale/modules_propale.php
 htdocs/core/modules/propale/mod_propale_saphir.php
 htdocs/core/modules/propale/doc/pdf_cyan.modules.php
-htdocs/core/modules/propale/doc/pdf_azur.modules.php
 htdocs/core/modules/propale/doc/doc_generic_proposal_odt.modules.php
 htdocs/core/modules/propale/mod_propale_marbre.php
 htdocs/core/modules/modBookCal.class.php
@@ -4167,7 +4163,6 @@ htdocs/core/modules/societe/mod_codecompta_panicum.php
 htdocs/core/modules/societe/mod_codeclient_elephant.php
 htdocs/core/modules/supplier_proposal/doc/doc_generic_supplier_proposal_odt.modules.php
 htdocs/core/modules/supplier_proposal/doc/pdf_zenith.modules.php
-htdocs/core/modules/supplier_proposal/doc/pdf_aurore.modules.php
 htdocs/core/modules/supplier_proposal/mod_supplier_proposal_saphir.php
 htdocs/core/modules/supplier_proposal/modules_supplier_proposal.php
 htdocs/core/modules/supplier_proposal/mod_supplier_proposal_marbre.php
@@ -4189,7 +4184,6 @@ htdocs/core/modules/commande/modules_commande.php
 htdocs/core/modules/commande/doc/pdf_proforma.modules.php
 htdocs/core/modules/commande/doc/pdf_eratosthene.modules.php
 htdocs/core/modules/commande/doc/doc_generic_order_odt.modules.php
-htdocs/core/modules/commande/doc/pdf_einstein.modules.php
 htdocs/core/modules/commande/mod_commande_marbre.php
 htdocs/core/modules/commande/mod_commande_saphir.php
 htdocs/core/modules/inventory/modules_inventory.php
@@ -4214,6 +4208,7 @@ htdocs/core/modules/modPaymentByBankTransfer.class.php
 htdocs/core/modules/modSocialNetworks.class.php
 htdocs/core/modules/modDocumentGeneration.class.php
 htdocs/core/doxygen.php
+htdocs/core/actions_addbox.inc.php
 htdocs/core/multicompany_page.php
 htdocs/core/lib/invoice2.lib.php
 htdocs/core/lib/treeview.lib.php
@@ -4276,6 +4271,7 @@ htdocs/core/lib/html.lib.php
 htdocs/core/lib/oauth.lib.php
 htdocs/core/lib/contract.lib.php
 htdocs/core/lib/invoice.lib.php
+htdocs/core/lib/dashboard.lib.php
 htdocs/core/lib/usergroups.lib.php
 htdocs/core/lib/salaries.lib.php
 htdocs/core/lib/api.lib.php
@@ -5954,6 +5950,7 @@ htdocs/product/stock/lib/replenishment.lib.php
 htdocs/product/class/productfournisseurprice.class.php
 htdocs/product/class/html.formproduct.class.php
 htdocs/product/class/propalmergepdfproduct.class.php
+htdocs/product/class/productlang.class.php
 htdocs/product/class/productcustomerprice.class.php
 htdocs/product/class/productbatch.class.php
 htdocs/product/class/product.class.php
@@ -12422,6 +12419,7 @@ htdocs/compta/journal/purchasesjournal.php
 htdocs/compta/journal/sellsjournal.php
 htdocs/compta/paiement.php
 htdocs/compta/paymentbybanktransfer/index.php
+htdocs/compta/bank/index.php
 htdocs/compta/bank/releve.php
 htdocs/compta/bank/graph.php
 htdocs/compta/bank/card.php
@@ -13344,6 +13342,7 @@ test/phpunit/FunctionsBELibTest.php
 test/soapui/Dolibarr-soapui-project.xml
 test/soapui/soap_createInvoice.xml
 test/README
+test/assets/xsd/pain.008.001.08.xsd
 test/assets/xsd/pain.008.001.02.xsd
 test/assets/xsd/pain.001.001.03.xsd
 test/sqlmap/README
@@ -13441,6 +13440,7 @@ ChangeLog
 dev/pullmerge.sh
 dev/README
 dev/translation/duplicate_translation_keys.lst
+dev/translation/fix_notranslate.php
 dev/translation/README
 dev/translation/sanity_check_en_langfiles.php
 dev/translation/autotranslator.php
@@ -13467,28 +13467,6 @@ dev/examples/mail/dolibarr_mail_attachementHTML.txt
 dev/examples/mail/source_email_ticket_2_a_answer_from_ticket.txt
 dev/examples/stripe/webhook_ipn_paymentintent_failed_sepa.txt
 dev/examples/ical/event_recu.txt
-dev/examples/zapier/triggers/contact.js
-dev/examples/zapier/triggers/order.js
-dev/examples/zapier/triggers/action.js
-dev/examples/zapier/triggers/member.js
-dev/examples/zapier/triggers/user.js
-dev/examples/zapier/triggers/ticket.js
-dev/examples/zapier/triggers/thirdparty.js
-dev/examples/zapier/README.md
-dev/examples/zapier/authentication.js
-dev/examples/zapier/action.json
-dev/examples/zapier/.travis.yml
-dev/examples/zapier/test/index.js
-dev/examples/zapier/.editorconfig
-dev/examples/zapier/index.js
-dev/examples/zapier/resources/resources.js
-dev/examples/zapier/searches/contact.js
-dev/examples/zapier/searches/member.js
-dev/examples/zapier/searches/thirdparty.js
-dev/examples/zapier/creates/contact.js
-dev/examples/zapier/creates/member.js
-dev/examples/zapier/creates/thirdparty.js
-dev/examples/zapier/package.json
 dev/examples/code/README
 dev/examples/code/get_contracts.php
 dev/examples/code/create_product.php
@@ -13574,15 +13552,6 @@ dev/tools/github_lines_byuser.sh
 dev/tools/fixsnakeCaseToCamelCase.sh
 dev/tools/fixaltlanguages_pre-commit.sh
 dev/tools/make_sprite.sh
-dev/tools/rector/composer.json
-dev/tools/rector/composer.lock
-dev/tools/rector/rector.php
-dev/tools/rector/README.md
-dev/tools/rector/src/Renaming/EmptyUserRightsToFunction.php
-dev/tools/rector/src/Renaming/GlobalToFunction.php
-dev/tools/rector/src/Renaming/EmptyGlobalToFunction.php
-dev/tools/rector/src/Renaming/UsePositiveExit.php
-dev/tools/rector/src/Renaming/UserRightsToFunction.php
 dev/tools/dolibarr-mysql2pgsql.pl
 dev/tools/fixduplicatelanglines.sh
 dev/tools/phan/runPhanDocker.sh
@@ -13669,6 +13638,7 @@ dev/build/docker-vibe/vibes.sh
 dev/build/docker-vibe/README.md
 dev/build/docker-vibe/docker-entrypoint.sh
 dev/build/docker-vibe/Dockerfile
+dev/build/docker-vibe/smtpblock.sh
 dev/build/doap/README
 dev/build/README
 dev/build/debian/control
